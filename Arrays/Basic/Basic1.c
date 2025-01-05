@@ -17,6 +17,12 @@ int   aiArrayExample2[5] = {1, 2, 3, 4, 5};        // this is an array that stor
 char  acArrayExample2[3] = {'a', 'b', 'c'};        // this is an array that store 3 characters
 float afArrayExample2[4] = {1.1, 2.2, 3.3, 4.4};   // this is an array that store 4 floats
 
+// we can also change the value of the array that have been initialized 
+// by using the following format:
+// array_name[index] = new_value;
+// here is an example of changing the value of the array
+aiArrayExample2[2] = 10; // this will change the value in the third index of the array to 10
+
 
 // Array Index and Traversal
 // Each element in array have an index that stored from 0
