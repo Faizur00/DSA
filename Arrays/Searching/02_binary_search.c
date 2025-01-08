@@ -43,9 +43,9 @@ int fnBinarySearch(int iSearchedValue, int iArraySize, int aiArr[])
 int main(void)
 {
     // Define an array of integers
-    int aiArr[] = {1, 2, 3, 4, 5};
+    int aiArr[] = {1, 3, 4, 7, 9, 11, 13, 17, 19, 23, 27, 31, 35, 39, 43, 47, 51, 55, 59, 63};
     // Define the value we want to search for in the array
-    int iValue = 4;
+    int iValue = 23;
     // Calculate the number of elements in the array
     int iArraySize = sizeof(aiArr) / sizeof(aiArr[0]);
 
