@@ -2,12 +2,12 @@
 
 // Function to perform linear search on an array
 // It takes an array, the size of the array, and the value to search for
-int fnLinearSearch(int arr[], int iArraySize, int valueToSearch)
+int fnLinearSearch(int aiArr[], int iArraySize, int iSearchedValue)
 {
     // Loop through each element in the array
     for (int i = 0; i < iArraySize; i++){
         // Check if the current element is equal to the value we are searching for
-        if (arr[i] == valueToSearch){
+        if (aiArr[i] == iSearchedValue){
             // If found, return the index of the element
             return i;
         }
@@ -21,7 +21,7 @@ int main(void)
     // Define an array of integers
     int aiArr[] = {1, 2, 3, 4, 5};
     // Define the value we want to search for in the array
-    int iValue = 1;
+    int iValue = 4;
     // Calculate the number of elements in the array
     int iArraySize = sizeof(aiArr) / sizeof(aiArr[0]);
 
@@ -36,6 +36,7 @@ int main(void)
         // If found, print the value and its index
         printf("Value %i found at index %i \n", iValue, iPosition); 
     }
+    return 0;
 }
 
 
