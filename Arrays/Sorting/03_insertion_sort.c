@@ -2,17 +2,19 @@
 
 int* fnInsertionSort(int aiArr[], int iArraySize)
 {
-    int i, j, iKey;
-    for (i = 1; i < iArraySize; i++){
-        iKey = aiArr[i];
-        j = i - 1;
-        while (j >= 0 && aiArr[j] > iKey){
+for (int i = 1; i < iArraySize; i++) {
+        int currentValue = aiArr[i];
+        int insertIndex = i;
+        int j = i - 1;
+
+        while (j >= 0 && aiArr[j] > currentValue) {
             aiArr[j + 1] = aiArr[j];
-            j = j - 1;
+            insertIndex = j;
+            j--;
         }
-        aiArr[j + 1] = iKey;
+        aiArr[insertIndex] = currentValue;
     }
-    return aiArr;
+   return aiArr;
 }
 
 
