@@ -27,7 +27,14 @@
  */
 #include <stdio.h>
 
-int* selection_sort(int iArraySize, int aiArr[])
+int fnSwap(int *iNum1, int *iNum2)
+{
+    int iTemp = *iNum1;
+    *iNum1 = *iNum2;
+    *iNum2 = iTemp;
+}
+
+int* fnselection_sort(int iArraySize, int aiArr[])
 {
     for (int i = 0; i < iArraySize - 1; i++){
         int iMinIndex = i;
@@ -37,9 +44,7 @@ int* selection_sort(int iArraySize, int aiArr[])
             }
         }
         if (iMinIndex != i){
-            int iTmp = aiArr[i];
-            aiArr[i] = aiArr[iMinIndex];
-            aiArr[iMinIndex] = iTmp;
+            fnSwap(&aiArr[i], &aiArr[iMinIndex]);
         }
     }
     return aiArr;
@@ -57,7 +62,7 @@ int main(void)
     }
     printf("\n");
 
-    selection_sort(iArraySize, aiArray);
+    fnselection_sort(iArraySize, aiArray);
 
     printf("Sorted array in ascending order: \n");
     for (int i = 0; i < iArraySize; i++) {
