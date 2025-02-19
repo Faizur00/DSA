@@ -72,7 +72,7 @@ void fnMergeSort(int aiArr[], int iLeft, int iRight)
 
 int main(void)
 {
-	int aiArr[] = {12, 11, 13, 5, 6, 7};
+	int aiArr[] = {12, 11, 13, 5, 6, 7, 19, 3, 8, 15, 2, 10, 14, 1, 4, 9, 18, 17, 16, 20};
 	int iArrSize = sizeof(aiArr) / sizeof(aiArr[0]);
 
 	printf("Given array is \n");
