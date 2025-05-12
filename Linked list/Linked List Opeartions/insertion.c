@@ -44,11 +44,20 @@ struct Node* fnAppendAtLast(struct Node* ptOldLinkedList, int iDataToAppend)
         return ptNewNode;
     }
 
-    // store our 
+    // store our old linked list to a tmp var
+    struct Node* tmp =  ptOldLinkedList;
 
+    // traverse to the last node
+    while (tmp -> ptNext != NULL){
+        tmp = tmp -> ptNext;
+    }
 
-
-
-
-
+    //hook the last node with our new node
+    tmp -> ptNext = ptNewNode;
+    
+    //return our oldLinkedList
+    return ptOldLinkedList; 
 }
+
+
+// insertion at the spesific palce at linked list
