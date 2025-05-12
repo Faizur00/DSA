@@ -61,3 +61,48 @@ struct Node* fnAppendAtLast(struct Node* ptOldLinkedList, int iDataToAppend)
 
 
 // insertion at the spesific palce at linked list
+// this one is a litle bit tricky
+// basically we need to cut off the linked list at the index that we want,
+// connect it to our new node,
+// and connect the new node to the rest of linked list
+
+struct Node* fnInsertAtPos(struct Node* ptOldLinkedList, int iDataToInsert, int iTargetPos)
+{
+    // return early if invalid target pos
+    if (iTargetPos < 1){
+        return ptOldLinkedList;
+    }
+
+    // special case if  pos == 1, we're basically just doing insert at the first position
+    if (iTargetPos == 1){
+        struct Node *ptNewNode = fnCreateNewNode(iDataToInsert);
+        ptNewNode->next = head;
+        return newNode;
+    }
+
+
+    // create a third node to help us store the first part of our linked list
+    struct Node* ptThirdNode =  ptOldLinkedList;
+
+
+    //traverse trhough the third node untill the current pos
+    for(int i = 1; i < iTargetPos - 1 && ptThirdNode != NULL; i ++){
+        ptThirdNode = ptThirdNode -> ptNext;
+    }
+
+    // another protection handle
+    if (ptThirdNode == NULL){
+        return ptOldLinkedList;
+    }
+
+    // the swap part begin here
+
+    // first we create the node based on the data that we want to insert
+    struct Node* ptNewNode = fnCreateNewNode(iDataToInsert);
+    // then we make the new node point to the third position of next after traversal
+    ptNewNode -> ptNext = ptThirdNode -> Next;
+    // now we make the thirdnode pointitng to the newnode
+    ptThirdNode -> ptNext = ptNewNode;
+
+    return ptOldLinkedList;
+}
