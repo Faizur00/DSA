@@ -21,6 +21,14 @@ struct TreeNode* fnCreateNewNode (char iData)
     return ptNewNode;
 }
 
+// fucntion to free the tree recursively
+void fnFreeTree(struct TreeNode* root) {
+    if (root == NULL) return;
+    fnFreeTree(root->ptLeft);
+    fnFreeTree(root->ptRight);
+    free(root);
+}
+
 // exampale for making a whole tree u8sing this fucntion
 int main(void)
 {
@@ -56,14 +64,8 @@ int main(void)
     printf("The data in node D is: %c\n", ndRoot -> ptLeft -> ptRight -> iData);
 
 
-    free(ndRoot);
-    free(ndNodeA);
-    free(ndNodeB);
-    free(ndNodeC);
-    free(ndNodeD);
-    free(ndNodeE);
-    free(ndNodeF);
-
+    // free the tree
+    fnFreeTree(ndRoot);
 
     return 0;
 }
