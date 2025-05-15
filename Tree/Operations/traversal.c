@@ -5,6 +5,10 @@
 // Preorder Traversal (current-left-right): Visits the node first, then left subtree, then right subtree.
 // Inorder Traversal (left-current-right): Visits left subtree, then the node, then the right subtree.
 // Postorder Traversal (left-right-current): Visits left subtree, then right subtree, then the node.-
+
+#include <stdio.h>
+#include <stdlib.h>
+
 struct TreeNode{
     int iData;
     struct TreeNode* ptLeft;
@@ -69,7 +73,7 @@ void fnBFSTraversal(struct TreeNode* ptNode) {
     struct TreeNode* Queue[100];
     int pFront = 0;
     int pRear = 0;
-
+    
     // enqueue the root node
     queue[pRear++] = ptNode;
 
